@@ -17,27 +17,32 @@
 </ion-header>
 
 <ion-content color="light">
-  <ion-card *ngFor="let recipe of recipes" class="ion-margin" [routerLink]="['./', recipe.idDrink]">
-    <ion-item lines="none">
-      <ion-avatar slot="start">
-        <ion-img [src]="recipe.strDrinkThumb"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <ion-card-title color="primary">{{recipe.strDrink}}</ion-card-title>
-        <ion-card-subtitle color="medium">{{recipe.strAlcoholic}}</ion-card-subtitle>
-      </ion-label>
-      <ion-col slot="end">
-        <ion-card-subtitle color="medium" class="ion-text-end small-text ion-margin-bottom">{{recipe.dateModified |
-          date: 'short'}}
-        </ion-card-subtitle>
-        <ion-card-subtitle color="medium" class="ion-text-end small-text">{{recipe.strCategory}}</ion-card-subtitle>
-      </ion-col>
-    </ion-item>
-    <img [src]="recipe.strDrinkThumb">
-    <ion-card-content>
-      <ion-text color="primary">
-        {{recipe.strInstructions}}
-      </ion-text>
-    </ion-card-content>
-  </ion-card>
+  <ion-text *ngIf="recipes?.length < 1">
+    <h1 class="ion-text-center">There are no results</h1>
+  </ion-text>
+  <div *ngIf="recipes?.length > 0">
+    <ion-card *ngFor="let recipe of recipes" class="ion-margin" [routerLink]="['./', recipe.idDrink]">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <ion-img [src]="recipe.strDrinkThumb"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <ion-card-title color="primary">{{recipe.strDrink}}</ion-card-title>
+          <ion-card-subtitle color="medium">{{recipe.strAlcoholic}}</ion-card-subtitle>
+        </ion-label>
+        <ion-col slot="end">
+          <ion-card-subtitle color="medium" class="ion-text-end small-text ion-margin-bottom">{{recipe.dateModified |
+            date: 'short'}}
+          </ion-card-subtitle>
+          <ion-card-subtitle color="medium" class="ion-text-end small-text">{{recipe.strCategory}}</ion-card-subtitle>
+        </ion-col>
+      </ion-item>
+      <img [src]="recipe.strDrinkThumb">
+      <ion-card-content>
+        <ion-text color="primary">
+          {{recipe.strInstructions}}
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
