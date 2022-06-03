@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/recipes" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-item slot="end">
+      <ion-avatar >
+        <ion-img [src]="loadedRecipe.strDrinkThumb"></ion-img>
+      </ion-avatar>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card class="ion-margin">
+    <ion-card-title color="primary" class="ion-text-center ion-margin">{{loadedRecipe.strDrink}}</ion-card-title>
+    <ion-card-subtitle color="medium" class="ion-text-center ion-margin-bottom">
+      {{loadedRecipe.strAlcoholic}}
+    </ion-card-subtitle>
+    <img [src]="loadedRecipe.strDrinkThumb">
+    <ion-card-title color="primary" class="ion-text-center ion-margin">Type Of glass</ion-card-title>
+    <ion-item lines="none">{{loadedRecipe.strGlass}}</ion-item>
+    <ion-card-title color="primary" class="ion-text-center ion-margin">Ingredients</ion-card-title>
+    <ion-item *ngFor="let ing of ingredients">
+      <ion-label>{{ing.ingredient}}</ion-label>
+      <ion-note slot="end">{{ing.measure}}</ion-note>
+    </ion-item>
+    <ion-card-title color="primary" class="ion-text-center ion-margin">Instructions</ion-card-title>
+    <ion-card-content>{{loadedRecipe.strInstructions}}</ion-card-content>
+  </ion-card>
+</ion-content>

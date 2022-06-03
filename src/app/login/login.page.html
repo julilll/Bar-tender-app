@@ -1,0 +1,44 @@
+<ion-content color="light">
+  <div class="container">
+    <ion-img class="main-logo" src="../../assets/logo-bar.png"></ion-img>
+    <ion-text color="primary">
+      <h1 class="ion-text-center signUpTitle">Sign In</h1>
+    </ion-text>
+    <form [formGroup]="form">
+      <ion-item lines="none">
+        <ion-label color="secondary">
+          <ion-icon size="large" name="mail-outline" slot="start"></ion-icon>
+        </ion-label>
+        <ion-input formControlName="email" type="email" placeholder="E-mail" required></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label color="secondary">
+          <ion-icon size="large" name="lock-closed-outline" slot="start"></ion-icon>
+        </ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Password" required></ion-input>
+      </ion-item>
+      <ion-text color="medium">
+        <p class="ion-text-end smallText">Forgot password?</p>
+      </ion-text>
+      <p class="ion-text-center smallText ion-margin">Sign In with</p>
+      <div class="button-container">
+        <ion-icon color="medium" size="large" name="logo-facebook"></ion-icon>
+      </div>
+      <ion-grid class="buttons-block">
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <ion-button type="button" shape="round" fill="outline">Sign Up</ion-button>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <ion-button type="submit" shape="round" (click)="onSubmit()" [disabled]="!form.valid">Sign In</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+    <ion-footer class="ion-no-border">
+      <ion-text color="medium">
+        <p class="smallText">Terms and conditions</p>
+      </ion-text>
+    </ion-footer>
+  </div>
+</ion-content>

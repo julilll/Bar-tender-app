@@ -1,3 +1,42 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" contentId="menuContent" type="overlay">
+    <ion-content color="light">
+      <ion-img class="main-logo" src="../../assets/logo-bar.png"></ion-img>
+      <ion-list class="ion-no-padding">
+        <ion-menu-toggle>
+          <ion-item lines="none" color="light" routerLink="/recipes">
+            <ion-icon color="medium" name="library-outline" slot="start"></ion-icon>
+            <ion-label color="primary">Recipes</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-item lines="none" color="light">
+          <ion-icon color="medium" name="star-outline" slot="start"></ion-icon>
+          <ion-label color="primary">Favorite</ion-label>
+        </ion-item>
+        <ion-item lines="none" color="light">
+          <ion-icon color="medium" name="newspaper-outline" slot="start"></ion-icon>
+          <ion-label color="primary">Blog</ion-label>
+        </ion-item>
+        <ion-item lines="none" color="light">
+          <ion-icon color="medium" name="chatbubbles-outline" slot="start"></ion-icon>
+          <ion-label color="primary">Chat</ion-label>
+        </ion-item>
+        <ion-item lines="none" color="light">
+          <ion-icon color="medium" name="home-outline" slot="start"></ion-icon>
+          <ion-label color="primary">About</ion-label>
+        </ion-item>
+      </ion-list>
+      <!-- <div class="bottom-button" lines="none" color="light">
+        <ion-icon size="large" name="power-outline"></ion-icon>
+      </div> -->
+    </ion-content>
+    <ion-footer class="ion-no-border">
+      <ion-menu-toggle>
+        <ion-toolbar color="light" (click)="onLogout()">
+          <ion-icon color="medium" size="large" name="power-outline" class="footerButton"></ion-icon>
+        </ion-toolbar>
+      </ion-menu-toggle>
+    </ion-footer>
+  </ion-menu>
+  <ion-router-outlet id="menuContent"></ion-router-outlet>
 </ion-app>

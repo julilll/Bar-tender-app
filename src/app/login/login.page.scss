@@ -1,0 +1,39 @@
+.container {
+  margin: 0px 30px
+}
+
+.main-logo {
+  height: 40px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+ion-item {
+  margin: 2px 0px
+}
+
+.signUpTitle {
+  margin: 40px 0px !important;
+}
+
+.smallText {
+  font-size: 12px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+ion-footer {
+  bottom: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  text-decoration: underline;
+}
+
+.buttons-block {
+  margin-top: 30px;
+}

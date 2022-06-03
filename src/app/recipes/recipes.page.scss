@@ -1,0 +1,27 @@
+.main-logo {
+  height: 40px;
+}
+
+ion-card-title {
+  font-weight: bold;
+}
+
+ion-content {
+  background-color: grey;
+}
+
+ion-card {
+  box-shadow: none;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+ion-header::after {
+  background-image: none;
+}
+
+ion-header {
+  border-bottom: 1px solid rgb(216, 216, 216);
+}

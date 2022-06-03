@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <ion-icon color="primary" size="large" name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="main-logo" src="../../assets/logo-bar.png"></ion-img>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openFilterModal()">
+        <ion-icon color="primary" size="large" name="options-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card *ngFor="let recipe of recipes" class="ion-margin" [routerLink]="['./', recipe.idDrink]">
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <ion-img [src]="recipe.strDrinkThumb"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <ion-card-title color="primary">{{recipe.strDrink}}</ion-card-title>
+        <ion-card-subtitle color="medium">{{recipe.strAlcoholic}}</ion-card-subtitle>
+      </ion-label>
+      <ion-col slot="end">
+        <ion-card-subtitle color="medium" class="ion-text-end small-text ion-margin-bottom">{{recipe.dateModified |
+          date: 'short'}}
+        </ion-card-subtitle>
+        <ion-card-subtitle color="medium" class="ion-text-end small-text">{{recipe.strCategory}}</ion-card-subtitle>
+      </ion-col>
+    </ion-item>
+    <img [src]="recipe.strDrinkThumb">
+    <ion-card-content>
+      <ion-text color="primary">
+        {{recipe.strInstructions}}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
